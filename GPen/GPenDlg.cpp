@@ -65,6 +65,7 @@ BEGIN_MESSAGE_MAP(CGPenDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON1, &CGPenDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +154,13 @@ HCURSOR CGPenDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void CGPenDlg::OnBnClickedButton1()
+{
+	int a, b, sum;
+	a = GetDlgItemInt(IDC_EDIT1);
+	b = GetDlgItemInt(IDC_EDIT2);
+	sum = a + b;
+	SetDlgItemInt(IDC_EDIT3, sum);
+}
